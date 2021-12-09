@@ -1,5 +1,8 @@
-import { Box } from "@chakra-ui/layout";
+import { Box, Text } from "@chakra-ui/layout";
+import { Flex } from "@chakra-ui/react";
 import Head from "next/head";
+import Link from "next/link";
+import Navbar from "./Navbar";
 
 
 
@@ -10,7 +13,7 @@ const Layout = ({children}) => (
     </Head>
     <Box maxWidth="1280px" m="auto">
       <header>
-        Navbar
+        <Navbar />
       </header>
       <main>
         {children}

@@ -7,7 +7,7 @@ import Property from '../components/Property.jsx'
 const Banner = ({purpose, title1, title2, desc1, desc2, linkName, buttonText, imageUrl}) => (
   <Flex flexWrap="wrap"  m="10" justifyContent="center">
     <Image src={imageUrl} width={450} height={300} alt="bannerImage"/>
-    <Box p="10" width={300}>
+    <Box p="5" width={300}>
       <Text color="gray.500" fontSize="sm" fontWeight="medium">{purpose}</Text>
       <Text fontSize="3x1" fontWeight="bold">{title1} <br/> {title2}</Text>
       <Text  fontSize="lg" paddingTop="3" paddingBottom="3" color="gray.700">{desc1}  <br/> {desc2}</Text>
@@ -20,7 +20,6 @@ const Banner = ({purpose, title1, title2, desc1, desc2, linkName, buttonText, im
 
 
 export default function Home({propertiesForSale, propertiesForRent, one, two}) {
-  console.log(propertiesForRent, propertiesForSale, one, two)
   return (
     <Box >
      <Banner 
