@@ -41,3 +41,25 @@ const Search = ({properties}) => {
   )
 }
 export default Search
+
+
+export async function getServerSideProps(context) {
+  const purpose = context.query.purpose || 'for-rent';
+  const rentFrequency = context.query.rentFrequency || 'yearly';
+  const minPrice = context.query.minPrice || '0';
+  const maxPrice = context.query.maxPrice || '1000000';
+  const roomsMin = context.query.roomsMin || '0';
+  const bathsMin = context.query.bathsMin || '0';
+  const sort = context.query.sort || 'price-desc';
+  const areaMax = context.query.areaMax || '35000';
+  const locationExternalIDs = context.query.locationExternalIDs || '5002';
+  const categoryExternalID = context.query.categoryExternalID || '4';
+
+  const data = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}&purpose=${purpose}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}`);
+
+  return {
+    props: {
+      properties: data?.hits,
+    },
+  };
+}
