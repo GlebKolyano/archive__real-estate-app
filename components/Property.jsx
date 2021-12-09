@@ -10,7 +10,9 @@ import millify from 'millify'
 
 const Property = () => {
   return (
-    <Box></Box>
+    <Box>
+      <div></div>
+    </Box>
   )
 }
 export default Property
