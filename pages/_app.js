@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-
+        
       </Head>
       <ChakraProvider>
         <Layout>
